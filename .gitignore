@@ -1,4 +1,4 @@
-.vscode
+/back-end.vscode
 
-/bin
-/obj
+/back-end/bin
+/back-end/obj
