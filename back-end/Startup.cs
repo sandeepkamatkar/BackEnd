@@ -29,12 +29,18 @@ namespace back_end
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            List<string> allowedOrigins = new List<string>(){"https://localhost:4100", "http://localhost:4100", "https://localhost:4200", "http://localhost:4200" };
             services.AddCors(options => {
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder => {
-                    builder.WithOrigins("https://localhost:4100")
+                    builder
                         .AllowAnyHeader()
-                        .AllowAnyOrigin()
+                        .SetIsOriginAllowed((origin) => {
+                            foreach (var item in allowedOrigins) {
+                                if (origin == item) return true;
+                            }
+                            return false;
+                        })
                         .AllowAnyMethod();
                 });
             });

@@ -1,4 +1,11 @@
-/back-end.vscode
-
+/back-end/.vscode
 /back-end/bin
 /back-end/obj
+
+/back-end.UnitTests/.vscode
+/back-end.UnitTests/bin
+/back-end.UnitTests/obj
+
+/back-end.IntegrationTests/.vscode
+/back-end.IntegrationTests/bin
+/back-end.IntegrationTests/obj
