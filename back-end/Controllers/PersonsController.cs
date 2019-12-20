@@ -16,6 +16,7 @@ namespace back_end.Controllers {
 
         public PersonsController(ApplicationDbContext context) {
             _context = context;
+            _context.Database.Migrate();
         }
 
         [HttpGet]
