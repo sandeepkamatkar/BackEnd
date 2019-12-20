@@ -1,6 +1,8 @@
 /back-end/.vscode
+/back-end/.vs
 /back-end/bin
 /back-end/obj
+/back-end/app.db
 
 /back-end.UnitTests/.vscode
 /back-end.UnitTests/bin
