@@ -2,6 +2,7 @@
 /back-end/.vs
 /back-end/bin
 /back-end/obj
+/back-end/out
 /back-end/app.db
 
 /back-end.UnitTests/.vscode
