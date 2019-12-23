@@ -1,6 +1,7 @@
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+ARG OutputDir
 WORKDIR /app
-COPY out .
+COPY $OutputDir .
 
 ENTRYPOINT ["dotnet", "back-end.dll"]
