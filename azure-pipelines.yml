@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  containerRegistryServiceConnection: myServiceConnection
+  containerRegistryServiceConnection: Docker_sandeep
   imageRepository: back-end
   tag: test
   imageName: 'back-end'
