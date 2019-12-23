@@ -42,6 +42,7 @@ steps:
 - task: Docker@2
   displayName: Build an image
   inputs:
+    containerRegistry: 'Docker_sandeep'
     repository: $(imageName)
     command: build
     Dockerfile: /**/Dockerfile_Azure_CI
@@ -50,6 +51,7 @@ steps:
 - task: Docker@2
   displayName: Push image
   inputs:
+    containerRegistry: 'Docker_sandeep'
     repository: $(imageName)
     command: push
 
