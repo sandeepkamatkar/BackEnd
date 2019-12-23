@@ -47,14 +47,6 @@ steps:
     command: login
     containerRegistry: $(containerRegistryServiceConnection)
 
-- task: DownloadSecureFile@1
-  name: privateKey
-  inputs:
-    secureFile: cc8f3c6f998bee63fefaaabc5a2202eab06867b83f491813326481f56a95466f.key
-- script: |
-    mkdir -p $(DOCKER_CONFIG)/trust/private
-    cp $(privateKey.secureFilePath) $(DOCKER_CONFIG)/trust/private
-
 - task: Docker@2
   displayName: Build an image
   inputs:
@@ -74,9 +66,6 @@ steps:
     command: push
     tags: |
       $(tag)
-    arguments: '--disable-content-trust=false'
-  env:
-    DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE: $(DOCKER_CONTENT_TRUST_REPOSITORY_PASSPHRASE)
 
 - script: |
     echo Heya!! I am here!! Add other tasks to build, test, and deploy your project.
