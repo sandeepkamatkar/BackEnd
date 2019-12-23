@@ -39,7 +39,7 @@ steps:
 - task: Docker@2
   displayName: Push image
   inputs:
-    repository: $(imageName)
+    repository: back-end
     command: push
     tags: |
       test1
