@@ -52,9 +52,6 @@ steps:
   inputs:
     repository: $(imageName)
     command: push
-    tags: |
-      test1
-      test2
 
 - script: |
     echo Heya!! I am here!! Add other tasks to build, test, and deploy your project.
