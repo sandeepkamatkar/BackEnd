@@ -42,18 +42,20 @@ steps:
 - task: Docker@2
   displayName: Build an image
   inputs:
-    containerRegistry: 'Docker_sandeep'
     repository: $(imageName)
     command: build
+    tags: |
+      test
     Dockerfile: /**/Dockerfile_Azure_CI
     arguments: '--build-arg OutputDir=.'
 
 - task: Docker@2
   displayName: Push image
   inputs:
-    containerRegistry: 'Docker_sandeep'
     repository: $(imageName)
     command: push
+    tags: |
+      test
 
 - script: |
     echo Heya!! I am here!! Add other tasks to build, test, and deploy your project.
