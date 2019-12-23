@@ -31,6 +31,11 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'Back_End_Website'
+
 - script: |
     echo Heya!! I am here!! Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
