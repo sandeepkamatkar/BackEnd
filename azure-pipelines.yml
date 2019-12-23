@@ -39,7 +39,7 @@ steps:
 - task: Docker@2
   displayName: Push image
   inputs:
-    repository: back-end
+    repository: skamatkar
     command: push
     tags: |
       test1
