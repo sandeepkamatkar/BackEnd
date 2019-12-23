@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+  imageName: 'back-end'
+
 steps:
 - task: UseDotNet@2
   inputs:
@@ -37,9 +40,17 @@ steps:
     artifactName: 'Back_End_Website'
 
 - task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: Dockerfile_Azure_CI
+    arguments: --build-arg OutputDir=$(Build.ArtifactStagingDirectory)
+
+- task: Docker@2
   displayName: Push image
   inputs:
-    repository: skamatkar
+    repository: $(imageName)
     command: push
     tags: |
       test1
