@@ -51,6 +51,7 @@ steps:
   displayName: Build an image
   inputs:
     command: build
+    buildContext: $(Build.ArtifactStagingDirectory)
     containerRegistry: $(containerRegistryServiceConnection)
     repository: $(imageRepository)
     tags: |
