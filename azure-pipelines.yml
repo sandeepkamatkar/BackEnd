@@ -11,7 +11,7 @@ pool:
 
 variables:
   containerRegistryServiceConnection: Docker_sandeep
-  imageRepository: back-end
+  imageRepository: skamatkar/back-end
   tag: test
   imageName: 'back-end'
 
